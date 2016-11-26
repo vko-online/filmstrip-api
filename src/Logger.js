@@ -12,7 +12,7 @@ const winstonLogger = new winston.Logger({
   rewriters: [
     (level: string, message: string, meta: Object): Object => (
       _.isEmpty(meta.tags)
-        ? _.omit(['tags'], meta)
+        ? _.omit(meta, ['tags'])
         : meta
     ),
   ],
